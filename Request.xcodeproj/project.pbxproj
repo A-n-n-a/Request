@@ -17,7 +17,7 @@
 		959099C01EFD0CCA001D0A17 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959099BE1EFD0CCA001D0A17 /* CustomCell.swift */; };
 		959099C11EFD0CCA001D0A17 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 959099BF1EFD0CCA001D0A17 /* CustomCell.xib */; };
 		959099C51EFD14F1001D0A17 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959099C41EFD14F1001D0A17 /* ImageViewController.swift */; };
-		959099C91EFD1A82001D0A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959099C81EFD1A82001D0A17 /* Main.storyboard */; };
+		959099CB1EFD45C6001D0A17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959099CA1EFD45C6001D0A17 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		959099BE1EFD0CCA001D0A17 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		959099BF1EFD0CCA001D0A17 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		959099C41EFD14F1001D0A17 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
-		959099C81EFD1A82001D0A17 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../Main.storyboard; sourceTree = "<group>"; };
+		959099CA1EFD45C6001D0A17 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,7 +71,7 @@
 				959099A21EFCFA1C001D0A17 /* ViewController.swift */,
 				959099B91EFD0C83001D0A17 /* ResultTableTableViewController.swift */,
 				959099C41EFD14F1001D0A17 /* ImageViewController.swift */,
-				959099C81EFD1A82001D0A17 /* Main.storyboard */,
+				959099CA1EFD45C6001D0A17 /* Main.storyboard */,
 				959099BD1EFD0CA5001D0A17 /* UI */,
 				959099A71EFCFA1D001D0A17 /* Assets.xcassets */,
 				959099A91EFCFA1D001D0A17 /* LaunchScreen.storyboard */,
@@ -159,7 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				959099AB1EFCFA1D001D0A17 /* LaunchScreen.storyboard in Resources */,
-				959099C91EFD1A82001D0A17 /* Main.storyboard in Resources */,
+				959099CB1EFD45C6001D0A17 /* Main.storyboard in Resources */,
 				959099A81EFCFA1D001D0A17 /* Assets.xcassets in Resources */,
 				959099C11EFD0CCA001D0A17 /* CustomCell.xib in Resources */,
 			);

@@ -14,34 +14,35 @@ struct RequestResult{
     var albumID: Int
     var id: Int
     var titleText: String
-    var url: URL
-    var thumbnail: UIImage
+    var url: String
+    var thumbnail: String
     
     init(dictionary: [String:AnyObject]) {
         
+
         
         let albumID = dictionary[albumIdString] as! Int
         let id = dictionary[idString] as! Int
         let titleText = dictionary[titleString] as! String
         
         let urlAsString = dictionary[urlString] as! String
-        let url = URL(string: urlAsString)
+        let privateUrl = URL(string: urlAsString)
         
         //var thumbnail = UIImage()
         //var imageUrl: URL
         let imageString = dictionary[thumbnailString] as! String
         
-        var imageUrl = URL(string: imageString)!
-        let data = NSData(contentsOf: imageUrl)
-        let thumbnail = UIImage(data:data! as Data)
-       
+//        let imageUrl = URL(string: imageString)!
+//        let data = NSData(contentsOf: imageUrl)
+//        let thumbnail = UIImage(data:data! as Data)!
         
+
         self.albumID = albumID
         self.id = id
         self.titleText = titleText
-        self.url = url!
-        self.thumbnail = thumbnail!
-        
+        self.url = urlAsString
+        self.thumbnail = imageString
+
     }
 
     

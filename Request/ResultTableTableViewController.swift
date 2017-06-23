@@ -42,10 +42,20 @@ class ResultTableTableViewController: UITableViewController {
         //let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
         let cell = Bundle.main.loadNibNamed("CustomCell", owner: self, options: nil)?.first as! CustomCell
         
-        cell.descriptionLabel.text = resultsArray[indexPath.row].titleText
-        cell.thumbnailImage.image = resultsArray[indexPath.row].thumbnail
+        var thumbnail = UIImage()
+        DispatchQueue.global().async(execute: {
+            thumbnail = self.stringToImage(string: self.resultsArray[indexPath.row].thumbnail)
+            //self.tableView.reloadData()
+            print(thumbnail)
+            
+            DispatchQueue.main.async {
+                cell.descriptionLabel.text = self.resultsArray[indexPath.row].titleText
+                cell.thumbnailImage.image = thumbnail
 
-       
+            }
+
+        })
+        
 
         return cell
     }
@@ -65,14 +75,27 @@ class ResultTableTableViewController: UITableViewController {
             let destViewController = segue.destination as! ImageViewController
         
         //let destViewController = segue.destination as! ImageViewController
+            
+            
         
             let selectedRowIndex = self.tableView.indexPathForSelectedRow
             selectedRow = self.tableView.cellForRow(at: selectedRowIndex!)!
             
-            destViewController.recievedImage = resultsArray[(selectedRowIndex?.row)!].thumbnail
+            let thumbnail = stringToImage(string: resultsArray[(selectedRowIndex?.row)!].thumbnail)
+            
+            destViewController.recievedImage = thumbnail
         }
         
         
+    }
+    
+    func stringToImage(string: String) -> UIImage {
+        let imageUrl = URL(string: string)!
+        let data = NSData(contentsOf: imageUrl)
+        let image = UIImage(data:data! as Data)!
+        
+        return image
+
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
