@@ -11,11 +11,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var albumID = Double()
-    var id = Double()
-    var titleText = String()
-    var url = String()
-    var thumbnail = String()
+
     
     var resultsArray = [RequestResult]()
 
@@ -35,7 +31,7 @@ class ViewController: UIViewController {
         
         resultsArray = parseData(url: url!)
         
-        performSegue(withIdentifier: toResultTableString, sender: self)
+       // performSegue(withIdentifier: toResultTableString, sender: self)
          
 
         
@@ -63,6 +59,21 @@ class ViewController: UIViewController {
         }
         return resultsArray
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        let destViewController = segue.destination as! ResultTableTableViewController
+        
+//        let selectedRowIndex = self.tableView.indexPathForSelectedRow
+//        selectedRow = self.tableView.cellForRow(at: selectedRowIndex!)!
+        
+        destViewController.resultsArray = self.resultsArray
+        
+        
+        
+
     }
 
 }
