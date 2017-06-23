@@ -13,3 +13,5 @@ let idString = "id"
 let titleString = "title"
 let urlString = "url"
 let thumbnailString = "thumbnailUrl"
+
+let toResultTableString = "ToResultTable"

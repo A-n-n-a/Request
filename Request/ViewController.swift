@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         let url = URL(string: "https://jsonplaceholder.typicode.com/photos")
         
         resultsArray = parseData(url: url!)
+        
+        performSegue(withIdentifier: toResultTableString, sender: self)
+         
 
         
     }
