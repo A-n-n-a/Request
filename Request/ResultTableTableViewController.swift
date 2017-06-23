@@ -11,7 +11,9 @@ import UIKit
 class ResultTableTableViewController: UITableViewController {
     
     var resultsArray = [RequestResult]()
-        
+    
+    var selectedRow = UITableViewCell()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +43,7 @@ class ResultTableTableViewController: UITableViewController {
         let cell = Bundle.main.loadNibNamed("CustomCell", owner: self, options: nil)?.first as! CustomCell
         
         cell.descriptionLabel.text = resultsArray[indexPath.row].titleText
-        cell.thumbnailImage.image = #imageLiteral(resourceName: "DefaultImage") // "DefaultImage.jpg"
+        cell.thumbnailImage.image = resultsArray[indexPath.row].thumbnail
 
        
 
@@ -54,5 +56,24 @@ class ResultTableTableViewController: UITableViewController {
     }
     
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == toImage {
+            
+            let destViewController = segue.destination as! ImageViewController
+        
+        //let destViewController = segue.destination as! ImageViewController
+        
+            let selectedRowIndex = self.tableView.indexPathForSelectedRow
+            selectedRow = self.tableView.cellForRow(at: selectedRowIndex!)!
+            
+            destViewController.displayingImage = resultsArray[(selectedRowIndex?.row)!].thumbnail
+        }
+        
+        
+    }
+
     
 }

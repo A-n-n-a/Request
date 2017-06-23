@@ -15,3 +15,4 @@ let urlString = "url"
 let thumbnailString = "thumbnailUrl"
 
 let toResultTableString = "ToResultTable"
+let toImage = "ToImage"

@@ -15,9 +15,10 @@ struct RequestResult{
     var id: Int
     var titleText: String
     var url: URL
-    var thumbnail: URL //UIImage
+    var thumbnail: UIImage
     
     init(dictionary: [String:AnyObject]) {
+        
         
         let albumID = dictionary[albumIdString] as! Int
         let id = dictionary[idString] as! Int
@@ -31,15 +32,15 @@ struct RequestResult{
         let imageString = dictionary[thumbnailString] as! String
         
         var imageUrl = URL(string: imageString)!
-        //let data = NSData(contentsOf: imageUrl!)
-        //thumbnail = UIImage(data:data! as Data)!
+        let data = NSData(contentsOf: imageUrl)
+        let thumbnail = UIImage(data:data! as Data)
        
         
         self.albumID = albumID
         self.id = id
         self.titleText = titleText
         self.url = url!
-        self.thumbnail = imageUrl
+        self.thumbnail = thumbnail!
         
     }
 

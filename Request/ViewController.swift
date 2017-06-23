@@ -30,9 +30,6 @@ class ViewController: UIViewController {
         let url = URL(string: "https://jsonplaceholder.typicode.com/photos")
         
         resultsArray = parseData(url: url!)
-        
-       // performSegue(withIdentifier: toResultTableString, sender: self)
-         
 
         
     }
@@ -46,9 +43,19 @@ class ViewController: UIViewController {
             let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [[String: AnyObject]]
             //print(json)
             
+//            for i in json {
+//                let singleResult = RequestResult(dictionary: i)
+//                resultsArray.append(singleResult)
+//            }
+            
+            var n = 0
             for i in json {
                 let singleResult = RequestResult(dictionary: i)
                 resultsArray.append(singleResult)
+                n += 1
+                if n == 3 {
+                    break
+                }
             }
             
             print(resultsArray.count)
