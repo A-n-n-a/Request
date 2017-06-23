@@ -10,12 +10,15 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
-    var displayingImage = UIImage()
+   
+    @IBOutlet weak var fullScreenImage: UIImageView!
+    
+    var recievedImage = UIImage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        fullScreenImage.image = recievedImage
 
        
     }

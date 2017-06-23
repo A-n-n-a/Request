@@ -69,10 +69,14 @@ class ResultTableTableViewController: UITableViewController {
             let selectedRowIndex = self.tableView.indexPathForSelectedRow
             selectedRow = self.tableView.cellForRow(at: selectedRowIndex!)!
             
-            destViewController.displayingImage = resultsArray[(selectedRowIndex?.row)!].thumbnail
+            destViewController.recievedImage = resultsArray[(selectedRowIndex?.row)!].thumbnail
         }
         
         
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: toImage, sender: self)
     }
 
     
